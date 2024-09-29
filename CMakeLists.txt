@@ -24,6 +24,21 @@ add_library(compile_flags_interface INTERFACE)
 target_compile_options(compile_flags_interface INTERFACE
     -Wall
     -Wextra
+    -Wshadow
+    -Wnon-virtual-dtor
+    -Wold-style-cast
+    -Wcast-align
+    -Woverloaded-virtual
+    -Wconversion
+    -Wsign-conversion
+    -Wmisleading-indentation
+    -Wduplicated-cond
+    -Wduplicated-branches
+    -Wlogical-op
+    -Wnull-dereference
+    -Wuseless-cast
+    -Wlifetime
+    -pedantic
     $<$<CONFIG:DEBUG>:-g>
     $<$<CONFIG:RELEASE>:-O3>
 )
