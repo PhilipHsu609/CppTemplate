@@ -32,12 +32,7 @@ target_compile_options(compile_flags_interface INTERFACE
     -Wconversion
     -Wsign-conversion
     -Wmisleading-indentation
-    -Wduplicated-cond
-    -Wduplicated-branches
-    -Wlogical-op
     -Wnull-dereference
-    -Wuseless-cast
-    -Wlifetime
     -pedantic
     $<$<CONFIG:DEBUG>:-g>
     $<$<CONFIG:RELEASE>:-O3>
