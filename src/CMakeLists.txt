@@ -1,18 +1,25 @@
-add_executable(
-    main
+set(EXECUTABLE_NAME main)
+
+add_executable(${EXECUTABLE_NAME})
+
+target_sources(
+    ${EXECUTABLE_NAME}
+    PRIVATE
     main.cpp
     myclass.cpp
 )
 
 target_include_directories(
-    main
+    ${EXECUTABLE_NAME}
     PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
 
 target_link_libraries(
-    main
+    ${EXECUTABLE_NAME}
     PRIVATE
-    compile_flags_interface
+    project_compile_flags
     fmt::fmt
 )
+
+target_compile_features(${EXECUTABLE_NAME} PRIVATE cxx_std_17)
