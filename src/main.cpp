@@ -3,12 +3,11 @@
 #include <fmt/core.h>
 
 int main() {
+    // Example: Using a custom class
     A::print();
 
-    const unsigned long a = -1;
-    const int b = 2;
-
-    fmt::print("{}\n", a > b);
+    // Example: Formatted output with fmt
+    fmt::print("The answer is {}\n", 42);
 
     return 0;
 }

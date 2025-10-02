@@ -1,3 +1,9 @@
+# Debug Utility Function
+#
+# This function prints useful CMake variables for debugging build issues.
+# Usage: Call debug() in CMakeLists.txt to print variable values.
+# Example: debug(MY_CUSTOM_VAR ANOTHER_VAR)
+
 function(debug)
     include(CMakePrintHelpers)
 
@@ -18,7 +24,7 @@ function(debug)
 
     cmake_print_variables(CMAKE_RUNTIME_OUTPUT_DIRECTORY) # Output directory for executables
 
-    # Additional arguments
+    # Additional arguments - print user-specified variables
     foreach(var ${ARGN})
         if(DEFINED ${var})
             cmake_print_variables(${var})
@@ -27,3 +33,4 @@ function(debug)
         endif()
     endforeach()
 endfunction()
+
