@@ -1,5 +1,7 @@
 # C++ Project Template
 
+[![CI](https://github.com/PhilipHsu609/CppTemplate/actions/workflows/ci.yml/badge.svg)](https://github.com/PhilipHsu609/CppTemplate/actions/workflows/ci.yml)
+
 A modern, easy-to-use C++ project template designed for small to personal projects. Focus on simplicity and extensibility.
 
 ## Features
@@ -10,6 +12,7 @@ A modern, easy-to-use C++ project template designed for small to personal projec
 - Clang-format and clang-tidy for code quality
 - Pre-configured compiler warnings and flags
 - Simple Makefile wrapper for common tasks
+- Automated CI/CD with GitHub Actions
 
 ## Quick Start
 
@@ -99,6 +102,16 @@ Run formatting:
 ```bash
 clang-format -i src/*.cpp include/**/*.hpp
 ```
+
+## Continuous Integration
+
+The project includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that:
+- Builds the project on Linux, macOS, and Windows
+- Tests with multiple compilers (GCC, Clang, MSVC)
+- Runs all unit tests automatically
+- Uploads test results on failure
+
+The CI runs on every push and pull request to the `main` branch.
 
 ## Project Structure Guidelines
 
