@@ -2,4 +2,4 @@
 
 #include <fmt/core.h>
 
-void A::print() { fmt::print("Hello World!\n"); }
+void A::print() { fmt::print("Hello from C++ Project Template!\n"); }
