@@ -84,6 +84,8 @@ Edit `vcpkg.json` to add new dependencies:
 }
 ```
 
+The `vcpkg-configuration.json` file pins the vcpkg baseline version to ensure reproducible builds. Update the baseline commit hash periodically to get newer package versions.
+
 ### Compiler Flags
 
 Modify `cmake/CompileFlags.cmake` to adjust warning levels and compiler options.

@@ -62,6 +62,11 @@ To add a new library:
 3. Add `find_package()` in root `CMakeLists.txt`
 4. Link it in your target's `CMakeLists.txt`
 
+**Note on vcpkg-configuration.json**: This file pins the vcpkg baseline to ensure reproducible builds. To update to newer package versions:
+1. Visit https://github.com/microsoft/vcpkg/commits/master
+2. Copy the latest commit SHA
+3. Update the `baseline` field in `vcpkg-configuration.json`
+
 ### 5. Code Style
 
 This template comes with pre-configured code style tools:
