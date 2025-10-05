@@ -102,7 +102,7 @@ make build
 # 3. Run tests
 make test
 
-# 4. Clean build
+# 4. Clean build files
 make clean
 ```
 
@@ -117,7 +117,10 @@ cmake --build build
 # Test
 cd build && ctest --output-on-failure
 
-# Clean
+# Clean build files (preserves CMake cache)
+cmake --build build --target clean
+
+# Or completely remove build directory (requires reconfiguration)
 rm -rf build
 ```
 
