@@ -1,22 +1,21 @@
 BUILD_TYPE ?= Debug
 BUILD_DIR = build
-TEST_DIR = $(BUILD_DIR)/test
 
-CMAKE_FLAGS=-DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
-            -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
+CMAKE_FLAGS = -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
+              -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang
 
-.PHONY: all config build clean test
+.PHONY: all config build test clean
 
-all: config build test
+all: build test
 
 config:
 	cmake $(CMAKE_FLAGS) -S . -B $(BUILD_DIR)
 
-build: config
+build:
 	cmake --build $(BUILD_DIR)
 
-test: build
-	cd $(TEST_DIR) && ctest
+test:
+	cd $(BUILD_DIR)/test && ctest
 
 clean:
-	rm -rf $(BUILD_DIR)
+	cmake --build $(BUILD_DIR) --target clean
